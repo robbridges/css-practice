@@ -1,0 +1,24 @@
+{
+  "name": "css-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robbridges/css-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robbridges/css-practice/issues"
+  },
+  "homepage": "https://github.com/robbridges/css-practice#readme",
+  "devDependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

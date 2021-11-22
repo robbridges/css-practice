@@ -1,9 +1,17 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark:#28b485;
+
+//yam
+
+//normalize css
 *,
 *::after,
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -11,44 +19,53 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 30px; }
+  padding: 30px;
+}
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-image: linear-gradient(to right bottom, rgba($color-primary-light,0.8), rgba($color-primary-dark, 0.8)), url(../img/hero.jpg);
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
-  position: relative; }
+  position: relative;
+
+}
 
 .logo-box {
   position: absolute;
   top: 40px;
-  left: 40px; }
+  left: 40px;
+}
 
 .logo {
-  height: 35px; }
+  height: 35px;
+}
 
 .text-box {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+}
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
-  margin-bottom: 60px; }
+  margin-bottom: 60px;
+}
 
 .heading-primary-main {
   display: block;
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+
   animation-name: moveInLeft;
-  animation-duration: 1s; }
+  animation-duration: 1s;
+}
 
 .heading-primary-sub {
   display: block;
@@ -56,37 +73,50 @@ body {
   font-weight: 700;
   letter-spacing: 17.4px;
   animation-name: moveInRight;
-  animation-duration: 1s; }
-
-/* key frame css that allows the header text to transfrom from the left, be invisible to slowly grow in opacity */
+  animation-duration: 1s;
+}
+/* key frame css that allows the header text to transfrom from the left, be invisible to slowly grow in opacity */ 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px); }
+    transform: translateX(-100px);
+  }
+
   80% {
-    transform: translateX(10px); }
+    transform: translateX(10px);
+  }
+
   100% {
     opacity: 1;
-    transform: translate(0); } }
-
+    transform: translate(0);
+  }
+}
 /* Key frames to do the exact opposite, comes in from the right */
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px); }
+    transform: translateX(100px)
+  }
+
   80% {
-    transform: translateX(-10px); }
+    transform: translateX(-10px);
+  }
   100% {
     opacity: 1;
-    transform: 0; } }
+    transform: (0);
+  }
+}
 
 @keyframes moveUpFromBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px); }
+    transform: translateY(30px);
+  }
   100% {
     opacity: 1;
-    transform: translateY(); } }
+    transform: translateY();
+  }
+}
 
 .btn:link,
 .btn:visited {
@@ -96,22 +126,27 @@ body {
   display: inline-block;
   border-radius: 100px;
   transition: all .2s;
-  position: relative; }
+  position: relative;
+}
 
 /* good box shadowing technique on hover and active, on hover it makes it look like the shadow is farther away, then comves closer then clicking on the button (making it active) 
 */
+
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
 
 .btn-white {
   background-color: #fff;
-  color: #777; }
-
+  color: #777;
+  
+}
 /* Giving an after effect to our button so that the white kind of expands when it's clicked. */
 .btn::after {
   content: "";
@@ -123,18 +158,20 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
-  transition: all .4s; }
+  transition: all .4s;
+}
 
 .btn-white::after {
-  background-color: #fff; }
-
+  background-color: #fff;
+}
 /* we transform the size of the button with scale and add transition to the parent element telling it to take .4s */
 .btn:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
+  opacity: 0;
+}
 /* create a specific class so that only this button gets targeted with this animation
 We use a new method called animation fill mode to make the bottom invisible before it begins it's animation */
 .btn-animated {
   animation: moveUpFromBottom .5s ease-out .75s;
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+}
